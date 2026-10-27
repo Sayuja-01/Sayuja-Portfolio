@@ -499,27 +499,27 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:1.5
     </div>
     <div class="proj-grid">
 
-          <div class="proj-card" data-cat="bi" data-date="2026-10-26">
+            <div class="proj-card" data-cat="bi" data-date="2026-10-26">
         <div class="proj-top">
           <div class="proj-num">Oct 2026 · Healthcare · Agentic AI<span style="margin-left:8px;background:var(--rose);color:#fff;font-family:'DM Mono',monospace;font-size:9px;padding:2px 8px;border-radius:100px;letter-spacing:.05em;">NEW</span></div>
           <span class="proj-domain" style="background:var(--plum2);color:var(--plum)">Healthcare & AI Agents</span>
-          <div class="proj-title">HRRP Navigator: An AI Agent That Investigates Its Own Mistakes</div>
-          <div class="proj-desc">Built an AI agent (Python, LangGraph, Claude API) that investigates CMS hospital readmission penalty data like an analyst: it plans its own sub-questions, writes and self-corrects its own SQL against a 5,432-hospital database, and drafts a strategist's memo. Caught the agent drawing a false conclusion from its own query logic, traced it to a root cause, and fixed it.</div>
+          <div class="proj-title">HRRP Navigator: An AI Analyst for Hospital Readmission Penalty Risk</div>
+          <div class="proj-desc">The majority of Medicare-eligible hospitals face active readmission penalties under CMS's Hospital Readmissions Reduction Program, yet few have a fast way to see which facilities are most exposed and why. I built an autonomous AI agent that performs this investigation end to end: it plans its own analytical sub-questions, writes and executes SQL against a relational hospital database, and synthesizes the results into a strategist's memo. I used Python and pandas to clean and join two CMS datasets into a unified SQLite database of 5,432 hospitals and 18,330 readmission records, LangGraph to orchestrate the agent's planning, querying, and reporting stages, and the Claude API to power each reasoning step, including automatic self-correction when a generated SQL query fails. The analysis identified that 77 hospitals, just 2.8% of those studied, carry the heaviest share of penalty risk, and the agent produced a targeted recommendation for where a health system should focus care-coordination resources first.</div>
           <button class="proj-expand-btn" onclick="toggleExpand(this)">Read more →</button>
         </div>
         <div class="proj-extra">
           <div class="proj-extra-inner">
             <ul>
-              <li>Cleaned and joined two CMS datasets (5,432 hospitals, 18,330 readmission records), finding and fixing a real facility-ID format mismatch between the two source files</li>
-              <li>Designed a five-stage LangGraph pipeline (planner, SQL generator, executor, synthesizer, strategist), with automatic SQL retry-on-error so the agent self-corrects rather than failing silently</li>
-              <li>Validated the agent's SQL against hand-written baseline queries before trusting its output, the same discipline as the bank screen's backtest</li>
-              <li>Found and fixed a logic bug where a row-limiting rule built for ranking questions was silently hiding a real trend, flipping a false "star rating doesn't predict risk" conclusion into the correct one</li>
-              <li>Published a case study and a recorded step-by-step replay of a real investigation, since the live version would need a paid API key to run publicly</li>
+              <li>Used Python and pandas to clean and reconcile two CMS source files, resolving a hospital identifier format inconsistency between them before loading the data into a relational SQLite database</li>
+              <li>Designed a five-stage LangGraph pipeline covering planning, SQL generation, execution, synthesis, and strategist reporting, with built-in retry logic so the agent corrects its own SQL when a query fails</li>
+              <li>Validated every AI-generated query against hand-written baseline SQL to confirm accuracy before trusting its output</li>
+              <li>Tuned the SQL-generation prompts so the agent adapts its query structure to the type of business question being asked, distinguishing ranking questions from distribution questions to ensure statistically sound results</li>
+              <li>Published a working case study and a recorded walkthrough of a real investigation, since running the live version publicly on an ongoing basis would require a paid API budget</li>
             </ul>
           </div>
         </div>
         <div class="proj-bottom">
-          <div class="proj-impact-row"><div class="proj-impact-num" style="color:var(--plum)">77 of 2,833</div><div class="proj-impact-sub">hospitals carrying the heaviest HRRP penalty burden, per the agent's corrected analysis</div></div>
+          <div class="proj-impact-row"><div class="proj-impact-num" style="color:var(--plum)">77 of 2,833</div><div class="proj-impact-sub">hospitals identified as carrying the heaviest HRRP penalty burden</div></div>
           <div class="proj-stack"><span class="stack-tag">Python</span><span class="stack-tag">LangGraph</span><span class="stack-tag">Claude API</span><span class="stack-tag">SQLite</span><span class="stack-tag">GitHub Pages</span></div>
           <div style="display:flex;gap:1.25rem;margin-top:1rem;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em">
             <a href="https://sayuja-01.github.io/agentic-bi-readmissions/" target="_blank" rel="noopener" style="color:var(--rose);text-decoration:none">Live demo ↗</a>
@@ -528,6 +528,7 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:1.5
         </div>
       </div>
 
+      
       <div class="proj-card" data-cat="bi" data-date="2026-10-25">
         <div class="proj-top">
           <div class="proj-num">Oct 2026 · Banking · Risk Analytics<span style="margin-left:8px;background:var(--rose);color:#fff;font-family:'DM Mono',monospace;font-size:9px;padding:2px 8px;border-radius:100px;letter-spacing:.05em;">NEW</span></div>
