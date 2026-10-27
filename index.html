@@ -528,36 +528,36 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:1.5
         </div>
       </div>
 
-      
-      <div class="proj-card" data-cat="bi" data-date="2026-10-25">
+           <div class="proj-card" data-cat="bi" data-date="2026-10-25">
         <div class="proj-top">
           <div class="proj-num">Oct 2026 · Banking · Risk Analytics<span style="margin-left:8px;background:var(--rose);color:#fff;font-family:'DM Mono',monospace;font-size:9px;padding:2px 8px;border-radius:100px;letter-spacing:.05em;">NEW</span></div>
           <span class="proj-domain" style="background:var(--gold2);color:var(--gold)">Banking &amp; Risk</span>
-          <div class="proj-title">Bank Early-Warning Monitor: Could Public Data Have Flagged SVB?</div>
-          <div class="proj-desc">Built an Alteryx pipeline over regulators’ quarterly Call Reports (about 4,700 banks per quarter) and a SAS peer screen that ranks every bank against its size peers on four warning signs. On data from ten weeks before it failed, the screen ranked Silicon Valley Bank first of 158 large banks, while the traditional capital check flagged none of the three 2023 failures.</div>
+          <div class="proj-title">Bank Early-Warning Monitor for the 2023 US Bank Failures</div>
+          <div class="proj-desc">When Silicon Valley Bank, Signature Bank and First Republic collapsed in 2023, risk teams needed to know whether the warning signs had been visible in public data. I set out to build an early-warning screen from the quarterly Call Reports that every US bank files with regulators, and to test it against those failures.</div>
           <button class="proj-expand-btn" onclick="toggleExpand(this)">Read more →</button>
         </div>
         <div class="proj-extra">
           <div class="proj-extra-inner">
             <ul>
-              <li>Built the data panel in Alteryx: joined four Call Report schedules per quarter by bank ID, removed description rows, merged the two reporting forms banks use, and reconciled row counts at every join</li>
-              <li>Built the peer screen in SAS: size peer groups, percentile ranks, top-10% flags and a combined risk score, run on 2022 data as a backtest and on 2026 data for a live watchlist</li>
-              <li>Found that hidden bond losses alone didn’t cause runs: Charles Schwab’s banks and USAA had larger losses than SVB but mostly insured depositors; the danger was losses combined with money that could leave</li>
-              <li>Stated the limits openly: Signature and First Republic ranked only 24th and 25th, loan-book rate risk isn’t captured, and the screen flags banks that survived</li>
-              <li>Published an interactive site with a playable “examiner” game, a scroll-driven data story, a watchlist and a bank lookup</li>
+              <li>I used Alteryx to clean and join four Call Report schedules per quarter for about 4,700 banks, matching records on each bank’s regulatory ID and combining two reporting formats into one consistent set of measures.</li>
+              <li>I calculated five risk indicators in Alteryx, including uninsured deposit share, unrealized bond losses relative to equity and two-year deposit growth, and produced an analysis-ready dataset for each quarter.</li>
+              <li>I used SAS to benchmark every bank against peers of similar size, ranking each indicator by percentile, flagging the top 10% and combining the ranks into a single risk score.</li>
+              <li>I backtested the screen on December 2022 data and applied the same pipeline to June 2026 data to produce a current watchlist for review.</li>
+              <li>The screen ranked SVB first of 158 large US banks ten weeks before it failed, showing that SVB combined unrealized losses equal to 98% of its equity with 94% uninsured deposits while the traditional capital check flagged none of the three failures.</li>
+              <li>I published the results as an interactive web tool built in JavaScript and hosted on GitHub Pages, with a data story, a watchlist and a bank lookup.</li>
             </ul>
           </div>
         </div>
         <div class="proj-bottom">
-          <div class="proj-impact-row"><div class="proj-impact-num" style="color:var(--gold)">#1 of 158</div><div class="proj-impact-sub">where the screen ranked SVB, ten weeks before it failed</div></div>
+          <div class="proj-impact-row"><div class="proj-impact-num" style="color:var(--gold)">#1 of 158</div><div class="proj-impact-sub">SVB’s rank among large US banks ten weeks before it failed</div></div>
           <div class="proj-stack"><span class="stack-tag">Alteryx</span><span class="stack-tag">SAS</span><span class="stack-tag">FFIEC Call Reports</span><span class="stack-tag">JavaScript</span><span class="stack-tag">GitHub Pages</span></div>
           <div style="display:flex;gap:1.25rem;margin-top:1rem;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em">
             <a href="https://sayuja-01.github.io/bank-early-warning/" target="_blank" rel="noopener" style="color:var(--rose);text-decoration:none">Live demo ↗</a>
             <a href="https://github.com/Sayuja-01/bank-early-warning" target="_blank" rel="noopener" style="color:var(--rose);text-decoration:none">GitHub ↗</a>
           </div>
         </div>
-      </div>
-
+      </div> 
+     
       <div class="proj-card" data-cat="data" data-date="2026-07-10">
         <div class="proj-top">
           <div class="proj-num">Jul 2026 · Data Engineering · Public Health<span style="margin-left:8px;background:var(--rose);color:#fff;font-family:'DM Mono',monospace;font-size:9px;padding:2px 8px;border-radius:100px;letter-spacing:.05em;">NEW</span></div>
